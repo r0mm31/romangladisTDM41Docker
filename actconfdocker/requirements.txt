@@ -1,0 +1,4 @@
+# requirements.txt
+flask
+requests
+# Agrega aquí otras dependencias necesarias
