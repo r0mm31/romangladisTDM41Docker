@@ -1,11 +1,16 @@
-# Usar una imagen base de Python
+# Usa una imagen base
 FROM python:3.9-slim
 
-# Establecer el directorio de trabajo
+# Establece el directorio de trabajo
 WORKDIR /app
 
-# Copiar el script de tiburón
+# Copia los archivos necesarios
 COPY shark.py .
+# Si tienes un archivo requirements.txt, también cópialo
+COPY requirements.txt .
 
-# Ejecutar el script
+# Instala las dependencias
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Comando para ejecutar la aplicación
 CMD ["python", "shark.py"]
