@@ -1,3 +1,6 @@
+git add .
+git commit -m "Trigger workflow again"
+git push origin main
 name: Build and Push Docker Image
 
 on:
@@ -26,3 +29,6 @@ jobs:
       - name: Push Docker image
         run: |
           docker push r0mm31/shark-app
+          on:
+  workflow_dispatch:
+
